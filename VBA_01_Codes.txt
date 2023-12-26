@@ -1,0 +1,116 @@
+'1 : 'Enter two numbers and show the sum of two numbers.'
+
+Sub Sum()
+Dim A As Integer, B As Integer, Sum As Integer
+   A = InputBox("Enter Your 1st Number")
+   B = InputBox("Enter Your 2nd Number")
+   Sum = A + B
+   MsgBox ("Sum is : " & Sum)
+End Sub
+
+'2: 'Enter a number and Evaluate if it is Even or Odd.'
+
+Sub Odd()
+Dim Number As Integer
+Number = InputBox("Enter Your Number")
+  If Number Mod 2 = 0 Then
+  MsgBox ("Not an Odd Number")
+  Else
+  MsgBox ("An Odd Number")
+  End If
+End Sub
+
+
+
+
+'3 : 'Enter a Mobile Number and give the name of the service provider based on the first 3 digits of mobile number.
+'– AIRTEL - 990 '
+'– BSNL – 901'
+'– MTS – 902'
+'– Vodafone – 900'
+'– Others – Rest of number.'
+
+'Using IF"
+
+Sub Service_Operator_if()
+Dim Ph_no As Double
+  Ph_no = InputBox("Enter Your Phone Number")
+   If Len(Ph_no) = 10 And Left(Ph_no, 3) = 990 Then
+  MsgBox ("Airtel")
+   ElseIf Len(Ph_no) = 10 And Left(Ph_no, 3) = 901 Then
+  MsgBox ("BSNL")
+   ElseIf Len(Ph_no) = 10 And Left(Ph_no, 3) = 902 Then
+  MsgBox ("MTS")
+   ElseIf Len(Ph_no) = 10 And Left(Ph_no, 3) = 900 Then
+  MsgBox ("Vodafone")
+   Else: MsgBox ("Other Service Provider")
+End If
+  
+End Sub
+
+
+'Using CSE'
+
+Sub Service_Operator_case()
+ Dim Ph_no As Double
+   Ph_no = InputBox("Enter Your Phone Number")
+ Select Case Ph_no
+   Case Len(Ph_no) = 10 And Left(Ph_no, 3) = 990
+   MsgBox ("Airtel")
+   Case Len(Ph_no) = 10 And Left(Ph_no, 3) = 901
+   MsgBox ("Bsnl")
+   Case Len(Ph_no) = 10 And Left(Ph_no, 3) = 902
+   MsgBox ("MTS")
+   Case Len(Ph_no) = 10 And Left(Ph_no, 3) = 990
+   MsgBox ("Vodafone")
+ 
+ End Select
+End Sub
+
+
+
+'4 : Enter the marks of a student and display the grade based on the marks.
+'• >=90 : A'
+''• 80 to 89 : B'
+'• 70 to 79 : C'
+'• 60 to 69 : D'
+'• <60 : Fail'
+
+Sub Grades()
+Dim Marks As Integer
+  Marks = InputBox("Enter Your Marks")
+  
+  Select Case Marks
+  Case Is >= 90
+  MsgBox ("A")
+  Case Is >= 80
+  MsgBox ("B")
+  Case Is >= 70
+  MsgBox ("C")
+  Case Is >= 60
+  MsgBox ("D")
+  Case Else
+  MsgBox ("Fail")
+  End Select
+End Sub
+
+
+
+
+'5 :  If a five digit number is entered through the keyboard, write a program to calculate the sum of digits.
+• 34529 '
+• Get 5 digit number'
+• Extract each digit'
+• Sum of digits'
+
+Sub Sum_of_Digits()
+Dim Num As Integer, I As Integer, Total As Integer
+ Num = InputBox("Enter Your Number")
+  For I = 1 To Len(Num)
+  
+  Total = Total + Mid(Num, I, 1)
+   
+   Next I
+   MsgBox ("Sum is : " & Total)
+   
+End Sub
